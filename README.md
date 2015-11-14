@@ -30,6 +30,7 @@ Since these requests are infinitely cached, you can schedule an optional wipe of
 [//]: tag (GitHub)
 [//]: tag (WordPress)
 [//]: tag (PHP)
+[//]: tag (Work)
 [//]: url_github (https://github.com/larjen/WPRestCache)
 [//]: url_demo (#)
 [//]: url_wordpress (https://wordpress.org/plugins/WPRestCache/)
