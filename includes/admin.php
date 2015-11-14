@@ -45,7 +45,7 @@ class WPRestCacheAdmin extends WPRestCache {
         // print the admin page
         echo '<div class="wrap">';
         echo '<h2>' . self::$plugin_name . '</h2>';
-        echo '<p>This plugin extends the REST API, with additional custom endpoints.</p>';
+        echo '<p>This plugin provides an infinite cache in front of a REST-API.</p>';
         $messages = get_option(self::$plugin_name . "_MESSAGES");
 
         while (!empty($messages)) {
