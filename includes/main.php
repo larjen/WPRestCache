@@ -22,7 +22,7 @@ class WPRestCache {
      */
 
     static function deactivation() {
-        
+
         self::clear_schedule();
         self::add_message('Plugin WPRestCache deactivated.');
     }
@@ -30,37 +30,47 @@ class WPRestCache {
     /*
      * Schedules a wipe of the cache to occur in 5 minutes
      */
+
     static function schedule_wipe_of_cache() {
-        // unschedule previous schedule
-        self::clear_schedule();
 
-        //gives the unix timestamp for today's date + 1 minute
-        $start = time() + (5 * 60);
+        // only schedule wipe if the cache wiping is activated
+        if (get_option(self::$plugin_name . "_ACTIVE") == true) {
 
-        // schedule wipe of cache in 5 minutes, when cache has been wiped
-        // the scheduler will be cleared so this does not repeat hourly
-        wp_schedule_event($start, 'hourly', 'WPRestCacheWipeCache');
+            // unschedule previous schedule
+            self::clear_schedule();
+
+            //gives the unix timestamp for today's date + 1 minute
+            $start = time() + (5 * 60);
+
+            // schedule wipe of cache in 5 minutes, when cache has been wiped
+            // the scheduler will be cleared so this does not repeat hourly
+            wp_schedule_event($start, 'hourly', 'WPRestCacheWipeCache');
+        }
     }
-    
+
     /*
      * Wipe the cache, then clear the schedule
      */
+
     static function do_scheduled_cache_wipe() {
-    
+
         self::clear_schedule();
-        
+
         // only wipe the cache if the cache wiping is activated
-        if (get_option(self::$plugin_name . "_ACTIVE") == true){
+        if (get_option(self::$plugin_name . "_ACTIVE") == true) {
             self::wipe_cache();
         }
-    }   
-    
+    }
+
+    /*
+     * Clears the schedule
+     */
 
     static function clear_schedule() {
         // unschedule previous schedule
         wp_clear_scheduled_hook('WPRestCacheWipeCache');
-    }   
-    
+    }
+
     /*
      * Copies one directory to another
      */
@@ -91,7 +101,7 @@ class WPRestCache {
 
         self::recurse_copy($source_dir, $destination_dir);
         self::wipe_cache();
-                
+
         self::add_message('Plugin WPRestCache deploying cache mechanism<br /> from: ' . $source_dir . '<br /> to: ' . $destination_dir);
     }
 
@@ -130,10 +140,6 @@ class WPRestCache {
 
         update_option(self::$plugin_name . "_MESSAGES", $messages);
     }
-
-
-
-    
 }
 
 // register wp hooks

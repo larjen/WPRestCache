@@ -22,15 +22,12 @@ class WPRestCacheAdmin extends WPRestCache {
         if (isset($_POST["ACTIVE"])) {
             if ($_POST["ACTIVE"] == 'activated') {
                 update_option(self::$plugin_name . "_ACTIVE", true);
-                
             }
 
             if ($_POST["ACTIVE"] == 'deactivated') {
                 update_option(self::$plugin_name . "_ACTIVE", false);
             }
         }
-
-
         
         // debug
         if (self::$debug) {
@@ -38,7 +35,6 @@ class WPRestCacheAdmin extends WPRestCache {
             echo 'ABSPATH=' .ABSPATH;
             echo 'get_option("' . self::$plugin_name . '_MESSAGES")=' . var_dump(get_option(self::$plugin_name . "_MESSAGES") ). PHP_EOL;
             echo 'get_option("' . self::$plugin_name . '_ACTIVE")=' . var_dump(get_option(self::$plugin_name . "_ACTIVE") ). PHP_EOL;
-
             echo '</pre>';
         }
 
