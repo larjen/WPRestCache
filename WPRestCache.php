@@ -1,11 +1,11 @@
 <?php
 
 /*
-  Plugin Name: WPRestApiExtensions
-  Plugin URI: https://github.com/larjen/WPRestApiExtensions
-  Description: Extends the WP-REST API with custom read only endpoints.
+  Plugin Name: WPRestCache
+  Plugin URI: https://github.com/larjen/WPRestCache
+  Description: Wordpress plugin that provides an infinite cache in front of a REST API.
   Author: Lars Jensen
-  Version: 1.0.6
+  Version: 1.0.0
   Author URI: http://exenova.dk/
  */
 
