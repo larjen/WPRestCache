@@ -14,7 +14,7 @@ Wordpress plugin that provides an infinite cache in front of a REST API.
 
 Wordpress plugin that provides an infinite cache in front of a REST API. This would be useful for sites that are static in nature and seldom updates, as polling the native REST API in WordPress can be somewhat slow.
 
-From within the plugin, there is an option to deploy a cache in front of this REST API. When you deploy it, be warned that the folder "rest-api" will be created in the root of your webserver.
+From within the plugin, there is an option to deploy a cache in front of a REST API. When you deploy it, be warned that the folder "rest-api" will be created in the root of your webserver.
 
 You can then request the REST-API like this:
 
