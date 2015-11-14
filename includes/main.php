@@ -44,7 +44,7 @@ class WPRestCache {
 
             // schedule wipe of cache in 5 minutes, when cache has been wiped
             // the scheduler will be cleared so this does not repeat hourly
-            wp_schedule_event($start, 'hourly', 'WPRestCacheWipeCache');
+            wp_schedule_single_event($start, 'WPRestCacheWipeCache');
         }
     }
 
