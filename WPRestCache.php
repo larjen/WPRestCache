@@ -17,7 +17,7 @@ if (is_admin()) {
     include_once(__DIR__ . DIRECTORY_SEPARATOR . "includes". DIRECTORY_SEPARATOR . "admin.php");
 
     // register activation and deactivation
-    register_activation_hook(__FILE__, 'WPRestApiExtensions::activation');
-    register_deactivation_hook(__FILE__, 'WPRestApiExtensions::deactivation');
+    register_activation_hook(__FILE__, 'WPRestCache::activation');
+    register_deactivation_hook(__FILE__, 'WPRestCache::deactivation');
     
 }
